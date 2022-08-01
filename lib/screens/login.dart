@@ -49,12 +49,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 5),
                   const Text("Let's login and continue to explore"),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   reusableTextField("Enter Email", Icons.email_outlined, false,
                       _emailTextController, Icons.keyboard_alt_outlined),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   reusableTextField("Enter Password", Icons.lock_person_outlined,
                       true, _passwordTextController, Icons.remove_red_eye_outlined,),
