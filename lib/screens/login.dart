@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 10,
                   ),
-                  reusableTextField("Enter Password", Icons.lock_person_outlined,
+                  reusableTextField("Enter Password", Icons.lock_open_outlined,
                       true, _passwordTextController, Icons.remove_red_eye_outlined,),
                   const SizedBox(
                   height: 5,
