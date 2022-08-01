@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medibuddy/screens/homescreen.dart';
 
 import './screens/login.dart';
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: LoginScreen(),
+      routes: {HomeScreen.routeName: (ctx) => HomeScreen()},
     );
   }
 }

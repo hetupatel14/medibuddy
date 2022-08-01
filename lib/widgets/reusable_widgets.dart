@@ -105,3 +105,53 @@ Widget forgotPassword(BuildContext context) {
         onPressed: () {}),
   );
 }
+
+Widget googleSignIn(
+    BuildContext context, Image image, String title, Function onTap) {
+  return Container(
+    width: MediaQuery.of(context).size.width,
+    height: 50,
+    margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+    child: TextButton.icon(
+      onPressed: () {
+        onTap();
+      },
+      icon: image,
+      label: Text(title,
+          style: TextStyle(
+            color: Colors.black,
+          )),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.resolveWith((states) {
+          if (states.contains(MaterialState.pressed)) {
+            return Colors.black26;
+          }
+          return Colors.white;
+        }),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+            side: BorderSide(
+                color: Colors.black, width: 0, style: BorderStyle.solid),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
+Row signUpOption() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const Text(
+        "Dont't have an account ? ",
+        style: TextStyle(color: Colors.black),
+      ),
+      GestureDetector(
+          onTap: () {},
+          child: const Text("Sign Up", style: TextStyle(color: Colors.blue))),
+    ],
+  );
+}
