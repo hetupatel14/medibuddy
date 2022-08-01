@@ -5,10 +5,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
     return Scaffold(
-      appBar: AppBar(title: Text("Medi buddy"),),
-      body: 
-      Center(child: CircularProgressIndicator()),
+      appBar: AppBar(
+        title: const Text("Medi Buddy"),
+      ),
+      body: const Center(
+        child: CircularProgressIndicator(
+          color: Colors.amber,
+        ),
+      ),
     );
   }
 }
