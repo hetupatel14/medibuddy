@@ -1,22 +1,17 @@
-// ignore_for_file: sized_box_for_whitespace
-
-
 import 'package:flutter/material.dart';
-
 import '../widgets/reusable_widgets.dart';
-import './homescreen.dart';
-import './signup_screen.dart';
+import '../screens/homescreen.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignUp extends StatefulWidget {
+  const SignUp({Key? key}) : super(key: key);
 
-  static const routeName = '/-login';
+  static const routeName = '/-signup';
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpState extends State<SignUp> {
   final TextEditingController _emailTextController = TextEditingController();
   final TextEditingController _passwordTextController = TextEditingController();
 
@@ -41,12 +36,12 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  logoWidget("assets/images/login1.png"),
+                  logoWidget("assets/images/sigup.png"),
                   const SizedBox(
-                    height: 20,
+                    height: 5,
                   ),
                   const Text(
-                    "Welcome Back!",
+                    "Let's Get Started!",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
@@ -55,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     textAlign: TextAlign.left,
                   ),
                   const SizedBox(height: 5),
-                  const Text("Let's login and continue to explore"),
+                  const Text("Create an account to get all the features"),
                   const SizedBox(
                     height: 20,
                   ),
@@ -66,6 +61,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   reusableTextField(
                     "Enter Password",
+                    Icons.lock_outlined,
+                    true,
+                    _passwordTextController,
+                    Icons.remove_red_eye_outlined,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  reusableTextField(
+                    "Confirm Password",
                     Icons.lock_person_outlined,
                     true,
                     _passwordTextController,
@@ -74,8 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(
                     height: 5,
                   ),
-                  forgotPassword(context),
-                  loginButtons(context, "Sign In", () {
+                  loginButtons(context, "Sign Up", () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -101,9 +105,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: 30,
                         height: 30,
                       ),
-                      "Sign In with Google",
+                      "Sign Up with Google",
                       () {}),
-                  signUpOption(context),
+                  signInOption(context),
                 ],
               ),
             ),
@@ -113,12 +117,11 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-Row signUpOption(BuildContext context) {
+Row signInOption(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Don't have an account? ",
+        const Text("Sign Up with Phone Number? ",
             style: TextStyle(color: Colors.black)),
         GestureDetector(
           onTap: () {

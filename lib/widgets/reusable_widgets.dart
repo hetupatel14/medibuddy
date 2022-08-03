@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
+
 Image logoWidget(String imageName) {
   return Image.asset(
     imageName,
     fit: BoxFit.fitWidth,
-    width: 240,
+    width: 230,
     height: 230,
   );
 }
@@ -119,7 +120,7 @@ Widget googleSignIn(
       },
       icon: image,
       label: Text(title,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.black,
           )),
       style: ButtonStyle(
@@ -132,7 +133,7 @@ Widget googleSignIn(
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
-            side: BorderSide(
+            side: const BorderSide(
                 color: Colors.black, width: 0, style: BorderStyle.solid),
           ),
         ),
@@ -141,17 +142,19 @@ Widget googleSignIn(
   );
 }
 
-Row signUpOption() {
+
+
+Row signInOption() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       const Text(
-        "Dont't have an account ? ",
+        "Already have an account ? ",
         style: TextStyle(color: Colors.black),
       ),
       GestureDetector(
           onTap: () {},
-          child: const Text("Sign Up", style: TextStyle(color: Colors.blue))),
+          child: const Text("Sign In", style: TextStyle(color: Colors.blue))),
     ],
   );
 }
