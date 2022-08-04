@@ -90,22 +90,6 @@ Container loginButtons(BuildContext context, String title, Function onTap) {
   );
 }
 
-Widget forgotPassword(BuildContext context) {
-  return Container(
-    width: MediaQuery.of(context).size.width,
-    height: 35,
-    alignment: Alignment.bottomRight,
-    child: TextButton(
-        child: const Text(
-          "Forgot Password ?",
-          style: TextStyle(
-            color: Colors.blue,
-          ),
-          textAlign: TextAlign.right,
-        ),
-        onPressed: () {}),
-  );
-}
 
 Widget googleSignIn(
     BuildContext context, Image image, String title, Function onTap) {

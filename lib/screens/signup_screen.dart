@@ -117,22 +117,25 @@ class _SignUpState extends State<SignUp> {
     );
   }
 }
+
 Row signInOption(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text("Sign Up with Phone Number? ",
-            style: TextStyle(color: Colors.black)),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SignUp()));
-          },
-          child: const Text(
-            "Sign Up",
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const Text("Sign Up with Phone Number? ",
+          style: TextStyle(color: Colors.black)),
+      GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => const SignUp()));
+        },
+        child: const Text(
+          "Sign Up",
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
-      ],
-    );
-  }
+      ),
+    ],
+  );
+}
+
+

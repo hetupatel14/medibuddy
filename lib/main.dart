@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './screens/homescreen.dart';
-import './screens/signup_screen.dart';
 import './screens/login.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +29,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const LoginScreen(),
-      routes: {HomeScreen.routeName: (ctx) => const HomeScreen(), SignUp.routeName: (ctx) => const SignUp()},
+      routes: {
+        HomeScreen.routeName: (ctx) => const HomeScreen(),
+      },
     );
   }
 }

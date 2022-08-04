@@ -1,11 +1,11 @@
 // ignore_for_file: sized_box_for_whitespace
 
-
 import 'package:flutter/material.dart';
 
 import '../widgets/reusable_widgets.dart';
 import './homescreen.dart';
 import './signup_screen.dart';
+import './reset_password.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -115,21 +115,41 @@ class _LoginScreenState extends State<LoginScreen> {
 }
 
 Row signUpOption(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text("Don't have an account? ",
-            style: TextStyle(color: Colors.black)),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SignUp()));
-          },
-          child: const Text(
-            "Sign Up",
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const Text("Don't have an account? ",
+          style: TextStyle(color: Colors.black)),
+      GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => const SignUp()));
+        },
+        child: const Text(
+          "Sign Up",
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
-      ],
-    );
-  }
+      ),
+    ],
+  );
+}
+
+Widget forgotPassword(BuildContext context) {
+  return Container(
+    width: MediaQuery.of(context).size.width,
+    height: 35,
+    alignment: Alignment.bottomRight,
+    child: TextButton(
+        child: const Text(
+          "Forgot Password ?",
+          style: TextStyle(
+            color: Colors.blue,
+          ),
+          textAlign: TextAlign.right,
+        ),
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => ResetPassword()));
+        }),
+  );
+}
