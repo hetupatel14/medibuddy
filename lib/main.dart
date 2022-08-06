@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import './screens/homescreen.dart';
 import './screens/login.dart';
 
-
-void main() {
-  runApp(const MyApp());
+void main() async {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -28,9 +26,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen(),
+      home: LoginScreen(),
       routes: {
-        HomeScreen.routeName: (ctx) => const HomeScreen(),
+        HomeScreen.routeName: (ctx) => HomeScreen(),
       },
     );
   }

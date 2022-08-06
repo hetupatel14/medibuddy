@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 class HomeScreen extends StatefulWidget {
   static const routeName = '/-homescreen';
 
-  const HomeScreen({Key? key}) : super(key: key);
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -82,7 +80,6 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class Pickerpage extends StatelessWidget {
-  const Pickerpage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
