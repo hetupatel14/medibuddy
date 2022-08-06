@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medibuddy/screens/login.dart';
 import '../widgets/reusable_widgets.dart';
 import '../screens/homescreen.dart';
 
@@ -98,15 +99,23 @@ class _SignUpState extends State<SignUp> {
                       Expanded(child: Divider(color: Colors.black)),
                     ],
                   ),
-                  googleSignIn(
-                      context,
-                      const Image(
-                        image: AssetImage("assets/images/google.png"),
-                        width: 30,
-                        height: 30,
-                      ),
-                      "Sign Up with Google",
-                      () {}),
+                  const SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(padding: EdgeInsets.all(10)),
+                      googleSignUp(
+                          const Image(
+                            image: AssetImage("assets/images/google.png"),
+                            width: 30,
+                            height: 30,
+                          ),
+                          () {}),
+                          Padding(padding: EdgeInsets.only(left: 10),),
+                      phoneSignIn(context, Icons.call, () {}),
+                    ],
+                  ),
+                  const SizedBox(height: 15,),
                   signInOption(context),
                 ],
               ),
@@ -121,15 +130,15 @@ Row signInOption(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text("Sign Up with Phone Number? ",
+        const Text("Already have an account? ",
             style: TextStyle(color: Colors.black)),
         GestureDetector(
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SignUp()));
+                MaterialPageRoute(builder: (context) => const LoginScreen()));
           },
           child: const Text(
-            "Sign Up",
+            "Sign In",
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ),

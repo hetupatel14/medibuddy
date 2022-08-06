@@ -90,15 +90,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       Expanded(child: Divider(color: Colors.black)),
                     ],
                   ),
-                  googleSignIn(
-                      context,
-                      const Image(
-                        image: AssetImage("assets/images/google.png"),
-                        width: 30,
-                        height: 30,
-                      ),
-                      "Sign In with Google",
-                      () {}),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  googleSignIn(context, Image.asset("assets/images/google.png"),
+                      "Sign In with Google", () {}),
                   signUpOption(context),
                 ],
               ),

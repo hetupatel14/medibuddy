@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 Image logoWidget(String imageName) {
   return Image.asset(
     imageName,
@@ -90,7 +89,6 @@ Container loginButtons(BuildContext context, String title, Function onTap) {
   );
 }
 
-
 Widget googleSignIn(
     BuildContext context, Image image, String title, Function onTap) {
   return Container(
@@ -126,8 +124,6 @@ Widget googleSignIn(
   );
 }
 
-
-
 Row signInOption() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -140,5 +136,29 @@ Row signInOption() {
           onTap: () {},
           child: const Text("Sign In", style: TextStyle(color: Colors.blue))),
     ],
+  );
+}
+
+Widget googleSignUp(Image image, Function onTap) {
+  return Container(
+    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.grey[200]),
+    child: IconButton(
+        onPressed: () {
+          onTap();
+        },
+        icon: image,
+  ),
+  );
+}
+
+Widget phoneSignIn(BuildContext context, IconData icon, Function onTap) {
+  return Container(
+    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.grey[200]),
+    child: IconButton(
+        onPressed: () {
+          onTap();
+        },
+        icon: Icon(Icons.call),
+  ),
   );
 }
