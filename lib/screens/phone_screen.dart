@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medibuddy/widgets/reusable_widgets.dart';
 import 'otp_screen.dart';
-import './signup_screen.dart';
 import '../widgets/phone_number.dart';
 
 class PhoneRegister extends StatefulWidget {

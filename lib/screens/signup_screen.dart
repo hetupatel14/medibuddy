@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medibuddy/screens/login.dart';
 import '../widgets/reusable_widgets.dart';
 import '../screens/homescreen.dart';
-import './phone.dart';
+import 'phone_screen.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);

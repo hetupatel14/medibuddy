@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 Container phoneNumber(BuildContext context) {
   return Container(
@@ -9,41 +10,37 @@ Container phoneNumber(BuildContext context) {
     ),
     child: Column(
       children: [
-        TextFormField(
+        IntlPhoneField(
           keyboardType: TextInputType.number,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Colors.black12,
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Colors.teal,
-                          ),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        prefix: const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8),
-                          child: Text(
-                            "(+91)",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        suffixIcon: const Icon(
-                          Icons.check_circle,
-                          color: Colors.green,
-                          size: 32,
-                        ),
-                      ),
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+          ),
+          decoration: InputDecoration(
+            enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                color: Colors.black12,
+              ),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                color: Colors.teal,
+              ),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            suffixIcon: const Icon(
+              Icons.check_circle,
+              color: Colors.green,
+              size: 32,
+            ),
+          ),
+          onChanged: (phone) {
+            print(phone.completeNumber);
+          },
+          onCountryChanged: (country) {
+            print('Country changed to: ' + country.name);
+          },
         ),
       ],
     ),
