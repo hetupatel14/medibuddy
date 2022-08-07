@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medibuddy/screens/login.dart';
 import '../widgets/reusable_widgets.dart';
 import '../screens/homescreen.dart';
+import './phone.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -81,10 +82,8 @@ class _SignUpState extends State<SignUp> {
                     height: 5,
                   ),
                   loginButtons(context, "Sign Up", () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomeScreen()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   }),
                   Row(
                     children: const [
@@ -99,7 +98,9 @@ class _SignUpState extends State<SignUp> {
                       Expanded(child: Divider(color: Colors.black)),
                     ],
                   ),
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -111,11 +112,20 @@ class _SignUpState extends State<SignUp> {
                             height: 30,
                           ),
                           () {}),
-                          Padding(padding: EdgeInsets.only(left: 10),),
-                      phoneSignIn(context, Icons.call, () {}),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10),
+                      ),
+                      phoneSignIn(context, Icons.call, () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (builder) => PhoneRegister()));
+                      }),
                     ],
                   ),
-                  const SizedBox(height: 15,),
+                  const SizedBox(
+                    height: 15,
+                  ),
                   signInOption(context),
                 ],
               ),
@@ -126,22 +136,23 @@ class _SignUpState extends State<SignUp> {
     );
   }
 }
+
 Row signInOption(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text("Already have an account? ",
-            style: TextStyle(color: Colors.black)),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const LoginScreen()));
-          },
-          child: const Text(
-            "Sign In",
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const Text("Already have an account? ",
+          style: TextStyle(color: Colors.black)),
+      GestureDetector(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const LoginScreen()));
+        },
+        child: const Text(
+          "Sign In",
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
-      ],
-    );
-  }
+      ),
+    ],
+  );
+}

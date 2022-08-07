@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:medibuddy/widgets/reusable_widgets.dart';
+import 'otp_screen.dart';
+import './signup_screen.dart';
+import '../widgets/phone_number.dart';
 
-import '../widgets/reusable_widgets.dart';
+class PhoneRegister extends StatefulWidget {
+  const PhoneRegister({Key? key}) : super(key: key);
 
-class ResetPassword extends StatefulWidget {
   @override
-  State<ResetPassword> createState() => _ResetPasswordState();
+  State<PhoneRegister> createState() => _PhoneRegisterState();
 }
 
-class _ResetPasswordState extends State<ResetPassword> {
-  final TextEditingController _passwordTextController = TextEditingController();
-
+class _PhoneRegisterState extends State<PhoneRegister> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Reset password",
+          "Verification",
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
@@ -44,41 +47,34 @@ class _ResetPasswordState extends State<ResetPassword> {
                     const SizedBox(
                       height: 10,
                     ),
-                    logoReset("assets/images/password.png"),
+                    logoReset("assets/images/verification.jpg"),
                     const SizedBox(
                       height: 5,
                     ),
                     const Text(
-                      "Create New Password",
+                      "Don't Worry",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
-                        fontSize: 20,
+                        fontSize: 24,
                       ),
                     ),
                     const SizedBox(height: 5),
                     const Text(
-                      "Your new password should be different from previously used passwords",
+                      "Enter your Phone number and we will send you an SMS verification code",
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    reusableTextField("New password", Icons.lock_outlined, true,
-                        _passwordTextController, Icons.remove_red_eye_outlined),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    reusableTextField(
-                        "Confirm password",
-                        Icons.lock_person_outlined,
-                        true,
-                        _passwordTextController,
-                        Icons.remove_red_eye_outlined),
-                    const SizedBox(
+                    phoneNumber(context),
+                    SizedBox(
                       height: 10,
                     ),
-                    loginButtons(context, "Create", () {}),
+                    loginButtons(context, "Send", () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => OtpScreen()));
+                    })
                   ],
                 ))),
       ),
