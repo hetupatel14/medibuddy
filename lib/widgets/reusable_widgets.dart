@@ -4,7 +4,7 @@ Image logoWidget(String imageName) {
   return Image.asset(
     imageName,
     fit: BoxFit.fitWidth,
-    width: 240,
+    width: 230,
     height: 230,
   );
 }
@@ -89,19 +89,76 @@ Container loginButtons(BuildContext context, String title, Function onTap) {
   );
 }
 
-Widget forgotPassword(BuildContext context) {
+Widget googleSignIn(
+    BuildContext context, Image image, String title, Function onTap) {
   return Container(
     width: MediaQuery.of(context).size.width,
-    height: 35,
-    alignment: Alignment.bottomRight,
-    child: TextButton(
-        child: const Text(
-          "Forgot Password ?",
-          style: TextStyle(
-            color: Colors.blue,
+    height: 50,
+    margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+    child: TextButton.icon(
+      onPressed: () {
+        onTap();
+      },
+      icon: image,
+      label: Text(title,
+          style: const TextStyle(
+            color: Colors.black,
+          )),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.resolveWith((states) {
+          if (states.contains(MaterialState.pressed)) {
+            return Colors.black26;
+          }
+          return Colors.white;
+        }),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+            side: const BorderSide(
+                color: Colors.black, width: 0, style: BorderStyle.solid),
           ),
-          textAlign: TextAlign.right,
         ),
-        onPressed: () {}),
+      ),
+    ),
+  );
+}
+
+Row signInOption() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const Text(
+        "Already have an account ? ",
+        style: TextStyle(color: Colors.black),
+      ),
+      GestureDetector(
+          onTap: () {},
+          child: const Text("Sign In", style: TextStyle(color: Colors.blue))),
+    ],
+  );
+}
+
+Widget googleSignUp(Image image, Function onTap) {
+  return Container(
+    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.grey[200]),
+    child: IconButton(
+        onPressed: () {
+          onTap();
+        },
+        icon: image,
+  ),
+  );
+}
+
+Widget phoneSignIn(BuildContext context, IconData icon, Function onTap) {
+  return Container(
+    decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.grey[200]),
+    child: IconButton(
+        onPressed: () {
+          onTap();
+        },
+        icon: Icon(Icons.call),
+  ),
   );
 }

@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-
+import './screens/homescreen.dart';
 import './screens/login.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Medi Buddy',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -28,7 +27,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: LoginScreen(),
+      routes: {
+        HomeScreen.routeName: (ctx) => HomeScreen(),
+      },
     );
   }
 }
-

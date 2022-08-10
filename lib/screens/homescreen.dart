@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const routeName = '/-home';
+
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Medi Buddy"),
+        title: Text("Medi Buddy"),
       ),
-      body: const Center(
+      body: Center(
         child: CircularProgressIndicator(
           color: Colors.amber,
         ),
