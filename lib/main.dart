@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medibuddy/screens/login%20screens/phone_screen.dart';
 import './screens/homescreen.dart';
-import './screens/login.dart';
 
 void main() async {
   runApp(MyApp());
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Medi Buddy',
       theme: ThemeData(
+        bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.white),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      home: PhoneRegister(),
       routes: {
         HomeScreen.routeName: (ctx) => HomeScreen(),
       },

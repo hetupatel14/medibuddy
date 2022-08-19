@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medibuddy/widgets/reusable_widgets.dart';
 import 'otp_screen.dart';
-import '../widgets/phone_number.dart';
+import '../../widgets/phone_number.dart';
 
 class PhoneRegister extends StatefulWidget {
   const PhoneRegister({Key? key}) : super(key: key);

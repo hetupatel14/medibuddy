@@ -101,8 +101,8 @@ class _OtpScreenState extends State<OtpScreen> {
                   height: 10,
                 ),
                 loginButtons(context, "Verify", () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()));
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, HomeScreen.routeName, (route) => false);
                 })
               ],
             ),
