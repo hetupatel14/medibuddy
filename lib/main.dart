@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:medibuddy/screens/login%20screens/phone_screen.dart';
 import 'package:medibuddy/widgets/bottom_navigation_bar.dart';
 import './screens/homescreen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -31,9 +32,15 @@ class MyApp extends StatelessWidget {
       // home: PhoneRegister(),
       initialRoute: '/',
       routes: {
-        '/' : (ctx) => BottomNavigationScreen(),
+        '/': (ctx) => BottomNavigationScreen(),
         HomeScreen.routeName: (ctx) => HomeScreen(),
       },
     );
   }
+}
+
+Future<void> init() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
