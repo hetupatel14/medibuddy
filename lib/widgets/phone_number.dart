@@ -10,6 +10,30 @@ Container phoneNumber(BuildContext context) {
     ),
     child: Column(
       children: [
+        TextFormField(
+          keyboardType: TextInputType.name,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+          ),
+          decoration: InputDecoration(
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.black12,
+              ),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.teal,
+              ),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            labelText: "Username"
+          ),
+          onTap: () {},
+        ),
+        SizedBox(height: 10,),
         IntlPhoneField(
           keyboardType: TextInputType.number,
           style: const TextStyle(
@@ -34,6 +58,7 @@ Container phoneNumber(BuildContext context) {
               color: Colors.green,
               size: 32,
             ),
+            labelText: "Phone Number"
           ),
           onChanged: (phone) {
             print(phone.completeNumber);

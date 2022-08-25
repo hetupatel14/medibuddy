@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medibuddy/screens/login%20screens/phone_screen.dart';
+import 'package:medibuddy/widgets/bottom_navigation_bar.dart';
 import './screens/homescreen.dart';
 
 void main() async {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Medi Buddy',
       theme: ThemeData(
-        bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.white),
+        bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.black),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -27,8 +28,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: PhoneRegister(),
+      // home: PhoneRegister(),
+      initialRoute: '/',
       routes: {
+        '/' : (ctx) => BottomNavigationScreen(),
         HomeScreen.routeName: (ctx) => HomeScreen(),
       },
     );
