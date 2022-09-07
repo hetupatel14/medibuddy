@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:introduction_screen/introduction_screen.dart';
+import 'package:medibuddy/introduction_screen.dart';
 import 'package:medibuddy/screens/login%20screens/phone_screen.dart';
 import 'package:medibuddy/widgets/bottom_navigation_bar.dart';
 import './screens/homescreen.dart';
@@ -29,12 +31,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      // home: PhoneRegister(),
-      initialRoute: '/',
-      routes: {
-        '/': (ctx) => BottomNavigationScreen(),
-        HomeScreen.routeName: (ctx) => HomeScreen(),
-      },
+      home: IntroScreen(),
+      // initialRoute: '/',
+      // routes: {
+      //   '/': (ctx) =>
+      //    BottomNavigationScreen(),
+      //   HomeScreen.routeName: (ctx) => HomeScreen(),
+      // },
     );
   }
 }
