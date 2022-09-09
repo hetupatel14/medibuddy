@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "344815399063",
+    "firebase_url": "https://medibuddy-8bee3-default-rtdb.firebaseio.com",
+    "project_id": "medibuddy-8bee3",
+    "storage_bucket": "medibuddy-8bee3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344815399063:android:d2a73627da48b7d608b9d2",
+        "android_client_info": {
+          "package_name": "com.example.medibuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344815399063-17e7ln6acf447svh7gnhee1rqg1qcri8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqE0PmAhRAQwfn2YvAwVzredf6u6JtrTM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344815399063-17e7ln6acf447svh7gnhee1rqg1qcri8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "344815399063-7ng7olvnsejtgtf895fpmfpvnflln4vh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.medibuddy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

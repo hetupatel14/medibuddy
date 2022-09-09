@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:introduction_screen/introduction_screen.dart';
+import 'package:medibuddy/introduction_screen.dart';
+import 'package:medibuddy/screens/login%20screens/phone_screen.dart';
+import 'package:medibuddy/widgets/bottom_navigation_bar.dart';
 import './screens/homescreen.dart';
-import './screens/login.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -15,6 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Medi Buddy',
       theme: ThemeData(
+        bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.black),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -26,10 +31,19 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
-      routes: {
-        HomeScreen.routeName: (ctx) => HomeScreen(),
-      },
+      home: IntroScreen(),
+      // initialRoute: '/',
+      // routes: {
+      //   '/': (ctx) =>
+      //    BottomNavigationScreen(),
+      //   HomeScreen.routeName: (ctx) => HomeScreen(),
+      // },
     );
   }
+}
+
+Future<void> init() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
