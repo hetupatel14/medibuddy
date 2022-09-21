@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:introduction_screen/introduction_screen.dart';
 import 'package:medibuddy/introduction_screen.dart';
-import 'package:medibuddy/screens/login%20screens/phone_screen.dart';
-import 'package:medibuddy/widgets/bottom_navigation_bar.dart';
-import './screens/homescreen.dart';
+// import 'package:medibuddy/screens/login%20screens/phone_screen.dart';
+// import 'package:medibuddy/widgets/bottom_navigation_bar.dart';
+// import './screens/homescreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 

@@ -28,21 +28,21 @@ class _IntroScreenState extends State<IntroScreen> {
   //     alignment: Alignment.center,
   //   );
   // }
-  Widget _buildImage(String assetName, [double width = 350]) {
-    return Image.asset('assets/$assetName', width: width);
-  }
+  // Widget _buildImage(String assetName, [double width = 350]) {
+  //   return Image.asset('assets/$assetName', width: width);
+  // }
 
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(fontSize: 19.0);
+    // const bodyStyle = TextStyle(fontSize: 19.0);
 
-    const pageDecoration = const PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
-      bodyTextStyle: bodyStyle,
-      bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Colors.white,
-      imagePadding: EdgeInsets.zero,
-    );
+    // const pageDecoration = const PageDecoration(
+    //   titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
+    //   bodyTextStyle: bodyStyle,
+    //   bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+    //   pageColor: Colors.white,
+    //   imagePadding: EdgeInsets.zero,
+    // );
 
     return IntroductionScreen(
       key: introKey,
