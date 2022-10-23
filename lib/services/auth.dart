@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medibuddy/models/user.dart';
+import 'package:medibuddy/services/patient_service.dart';
 
 class AuthService {
   final FirebaseAuth _auth =
@@ -55,6 +56,10 @@ class AuthService {
           email: email, password: password);
 
       User? user = result.user;
+
+      //create a new document for the user with uid
+      await PatientService(uid: user?.uid)
+          .updateUserData("Shreyans", "cough", "strepsils", "9428322809");
       return _regUserfromFirebaseUser(user);
     } catch (e) {
       print(e.toString());

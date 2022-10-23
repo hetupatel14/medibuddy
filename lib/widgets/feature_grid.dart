@@ -5,7 +5,6 @@ import 'package:medibuddy/screens/Feature%20Screens/doctor_screen.dart';
 import 'package:medibuddy/screens/Feature%20Screens/hospital_screen.dart';
 import 'package:medibuddy/screens/Feature%20Screens/laboratories_screen.dart';
 import 'package:medibuddy/screens/Feature%20Screens/medical_shops.dart';
-import 'package:medibuddy/screens/profile_screen.dart';
 import '../models/feature.dart';
 
 // class FeatureGrid extends StatelessWidget {
@@ -163,7 +162,7 @@ class FeatureGridDesign extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              DoctorsScreen()));
+                                              DoctorScreen()));
                                   break;
                                 case '2':
                                   Navigator.push(

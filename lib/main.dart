@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
-import 'package:medibuddy/screens/login%20screens/authenticate.dart';
-
+import 'package:medibuddy/screens/Feature%20Detail%20Screens/add_doctor_screen.dart';
+import 'package:medibuddy/screens/Feature%20Screens/doctor_screen.dart';
 import 'package:medibuddy/services/auth.dart';
-
 import 'package:medibuddy/wrapper.dart';
 import 'package:provider/provider.dart';
 import './screens/homescreen.dart';
@@ -32,7 +30,7 @@ class MyApp extends StatelessWidget {
         bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.black),
         primarySwatch: Colors.blue,
         ),
-        home: Wrapper(),
+        home: DoctorScreen(),
         routes: {
           HomeScreen.routeName: (ctx) => HomeScreen(),
         },

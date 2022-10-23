@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medibuddy/screens/login%20screens/register.dart';
 import 'package:medibuddy/services/auth.dart';
+
 
 class EmailScreen extends StatefulWidget {
   final Function toggleView;
