@@ -3,21 +3,9 @@ import 'package:medibuddy/models/doctors.dart';
 
 class DoctorService {
  
-
   // collection reference
   final CollectionReference doctorCollection =
       FirebaseFirestore.instance.collection('doctors');
-
-  Future<void> updateDoctorData(
-      String name, String specialization, String title, String email) async {
-    print("recived DATA");
-    return await doctorCollection.doc().set({
-      'name': name,
-      'specialization': specialization,
-      'title': title,
-      'email': email,
-    });
-  }
 
   //doctors' list from snapshot
   List<Doctors> _doctorListfromSnapshot(QuerySnapshot snapshot) {
