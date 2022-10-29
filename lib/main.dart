@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medibuddy/screens/Feature%20Detail%20Screens/add_caretaker_screen.dart';
-import 'package:medibuddy/screens/Feature%20Detail%20Screens/add_doctor_screen.dart';
-import 'package:medibuddy/screens/Feature%20Detail%20Screens/add_hospital_screen.dart';
-import 'package:medibuddy/screens/Feature%20Screens/doctor_screen.dart';
+import 'package:medibuddy/screens/Feature%20Screens/laboratories_screen.dart';
 import 'package:medibuddy/services/auth.dart';
 import 'package:medibuddy/wrapper.dart';
 import 'package:provider/provider.dart';
@@ -10,9 +7,8 @@ import './screens/homescreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:medibuddy/models/user.dart';
+import 'screens/Feature Detail Screens/add_laboratory_screen.dart';
 
-import 'screens/Feature Screens/care_takers_screen.dart';
-import 'screens/Feature Screens/hospital_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +31,7 @@ class MyApp extends StatelessWidget {
         bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.black),
         primarySwatch: Colors.blue,
         ),
-        home: HospitalScreen(),
+        home: LaboratoryScreen(),
         routes: {
           HomeScreen.routeName: (ctx) => HomeScreen(),
         },

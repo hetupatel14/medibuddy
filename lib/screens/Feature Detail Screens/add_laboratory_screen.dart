@@ -1,33 +1,26 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class addHospital extends StatefulWidget {
-  const addHospital({super.key});
+class addLaboratory extends StatefulWidget {
+  const addLaboratory({super.key});
 
   @override
-  State<addHospital> createState() => _addHospitalState();
+  State<addLaboratory> createState() => _addLaboratoryState();
 }
 
-class _addHospitalState extends State<addHospital> {
-  final CollectionReference hospitalCollection =
-      FirebaseFirestore.instance.collection('hospitals');
+class _addLaboratoryState extends State<addLaboratory> {
+  final CollectionReference laboratoryCollection =
+      FirebaseFirestore.instance.collection('laboratories');
   final _formKey = new GlobalKey<FormState>();
-
-  bool asBool(dynamic val) {
-    val = val.toString();
-    if (val == "true")
-      return true;
-    else
-      return false;
-  }
 
   String name = "";
   String location = "";
   int rating = 0;
   String specialities = "";
   String phoneNumber = "";
-  String roomsAvailable = "No";
-  String emergencyOPDAvailable = "No";
+  String homeTestAvailable = "No";
+  List tests = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +28,7 @@ class _addHospitalState extends State<addHospital> {
       appBar: AppBar(
           backgroundColor: Colors.brown[400],
           elevation: 0.0,
-          title: Text("Add a Hospital")),
+          title: Text("Add a Laboratory")),
       body: Container(
           child: Form(
               key: _formKey,
@@ -85,45 +78,39 @@ class _addHospitalState extends State<addHospital> {
                     },
                   ),
                   SizedBox(height: 20.0),
-                  Text("Rooms Available:", textAlign: TextAlign.left,),
+                  Text(
+                    "Home Testing Available:",
+                    textAlign: TextAlign.left,
+                  ),
                   RadioListTile(
                       title: Text("Yes"),
                       value: "Yes",
-                      groupValue: roomsAvailable,
+                      groupValue: homeTestAvailable,
                       onChanged: (value) {
                         setState(() {
-                          roomsAvailable = value.toString();
+                          homeTestAvailable = value.toString();
                         });
                       }),
                   RadioListTile(
                       title: Text("No"),
                       value: "No",
-                      groupValue: roomsAvailable,
+                      groupValue: homeTestAvailable,
                       onChanged: (value) {
                         setState(() {
-                          roomsAvailable = value.toString();
+                          homeTestAvailable = value.toString();
                         });
                       }),
-                      SizedBox(height: 20.0),
-                  Text("Emergency OPD Available:", textAlign: TextAlign.left,),
-                  RadioListTile(
-                      title: Text("Yes"),
-                      value: "Yes",
-                      groupValue: emergencyOPDAvailable,
-                      onChanged: (value) {
-                        setState(() {
-                          emergencyOPDAvailable= value.toString();
-                        });
-                      }),
-                  RadioListTile(
-                      title: Text("No"),
-                      value: "No",
-                      groupValue: emergencyOPDAvailable,
-                      onChanged: (value) {
-                        setState(() {
-                          emergencyOPDAvailable = value.toString();
-                        });
-                      }),
+                  SizedBox(height: 20.0),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        hintText: "Tests(Write each test seperated by comma)"),
+                    validator: (val) =>
+                        val!.isEmpty ? "Enter atleast one test" : null,
+                    onChanged: (val) {
+                      setState(() => tests = val.split(","));
+                    },
+                  ),
+                  SizedBox(height: 20.0),
                   ElevatedButton(
                       child: Text("Submit"),
                       onPressed: () async {
@@ -132,16 +119,16 @@ class _addHospitalState extends State<addHospital> {
                         print("degree: ${specialities}");
                         print("Rating: ${rating}");
                         print("Phone number: ${phoneNumber}");
-                        print("Room: ${roomsAvailable}");
-                        print(
-                            "emergencyOPDAvialable: ${emergencyOPDAvailable}");
-                        return await hospitalCollection.doc().set({
+                        print("homeTestavailable: ${homeTestAvailable}");
+                        print("Tests: ${tests}");
+
+                        return await laboratoryCollection.doc().set({
                           'name': name,
                           'location': location,
                           'specialities': specialities,
                           'rating': rating,
-                          'roomsAvailable': roomsAvailable,
-                          'emergencyOPDAvailable': emergencyOPDAvailable,
+                          'homeTestAvailable': homeTestAvailable,
+                          'tests': tests,
                           'phoneNumber': phoneNumber,
                         });
                       })

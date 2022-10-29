@@ -176,7 +176,7 @@ class FeatureGridDesign extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              LaboratoriesScreen()));
+                                              LaboratoryScreen()));
                                   break;
                                 case '4':
                                   Navigator.push(

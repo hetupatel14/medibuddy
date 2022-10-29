@@ -15,7 +15,7 @@ class HospitalScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamProvider<List<Hospitals>?>.value(
       initialData: [],
-      value:HospitalService().hospitals,
+      value: HospitalService().hospitals,
       child: Scaffold(
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
