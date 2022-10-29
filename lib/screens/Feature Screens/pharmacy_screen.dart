@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:medibuddy/models/bloodbanks.dart';
-import 'package:medibuddy/services/bloodbank_service.dart';
+import 'package:medibuddy/models/pharamcies.dart';
+import 'package:medibuddy/services/pharmacy_service.dart';
 import 'package:provider/provider.dart';
-import '../../widgets/lists/bloodBank_list.dart';
+import '../../widgets/lists/pharmacy_list.dart';
 
-class BloodBankScreen extends StatelessWidget {
-  const BloodBankScreen({super.key});
+class PharmacyScreen extends StatelessWidget {
+  const PharmacyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<List<BloodBanks>?>.value(
+    return StreamProvider<List<Pharmacies>?>.value(
       initialData: [],
-      value: BloodBankService().bloodbanks,
+      value: PharmacyService().pharmacies,
       child: Scaffold(
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.black,
         ),
         body: Center(
-          child: BloodBankList(),
+          child: PharmacyList(),
         ),
       ),
     );

@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../services/laboratory_service.dart';
 import '../../widgets/lists/laboratory_list.dart';
 
+
 class LaboratoryScreen extends StatelessWidget {
   const LaboratoryScreen({super.key});
 
