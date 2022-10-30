@@ -16,7 +16,9 @@ class DoctorScreen extends StatelessWidget {
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.black,
+          title: Text('Doctors', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         ),
+        backgroundColor: Colors.black,
         body: Center(
           child: DoctorList(),
         ),

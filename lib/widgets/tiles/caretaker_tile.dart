@@ -9,17 +9,45 @@ class CaretakerTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: EdgeInsets.only(top: 8.0),
-        child: Card(
+        child: Container(
+          decoration: BoxDecoration(color: Colors.pink[200], borderRadius: BorderRadius.circular(20)),
           margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
           child: ListTile(
             leading: CircleAvatar(
               radius: 25.0,
-              backgroundColor: Colors.brown,
+             backgroundImage: AssetImage('assets/images/google.png'),
+              backgroundColor: Colors.transparent,
             ),
-            title: Text(caretaker.name),
-            subtitle: Text('Title: ${caretaker.degree}'),
-            trailing: Text(
-                "E-mail: ${caretaker.email}\n Phone: ${caretaker.phoneNumber} \n Rating: ${caretaker.rating}"),
+            title: Text(caretaker.name, style: TextStyle(fontWeight: FontWeight.bold),),
+            subtitle: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text("Title: ", style: TextStyle(fontWeight: FontWeight.w800),),
+                    Text('${caretaker.degree}')
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text('Email: ', style: TextStyle(fontWeight: FontWeight.w800),),
+                    Text('${caretaker.email}'),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text('Phone: ', style: TextStyle(fontWeight: FontWeight.w800),),
+                    Text('${caretaker.phoneNumber}'),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text('Rating: ', style: TextStyle(fontWeight: FontWeight.w800),),
+                    Text('${caretaker.rating}')
+                  ],
+                )
+              ],
+            ),
           ),
         ));
   }

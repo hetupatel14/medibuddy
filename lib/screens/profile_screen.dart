@@ -8,10 +8,12 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).bottomSheetTheme.backgroundColor,
+          backgroundColor: Colors.black,
           elevation: 0,
-          iconTheme: const IconThemeData(color: Colors.black),
+          iconTheme: const IconThemeData(color: Colors.white),
+          title: Text('Profile', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         ),
+        backgroundColor: Colors.black,
         body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,

@@ -16,7 +16,9 @@ class BloodBankScreen extends StatelessWidget {
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.black,
+          title: Text('Blood Banks', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         ),
+        backgroundColor: Colors.black,
         body: Center(
           child: BloodBankList(),
         ),

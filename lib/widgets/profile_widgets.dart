@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medibuddy/screens/Feature%20Screens/patient_screen.dart';
 
 @override
 Widget profileWidgets(BuildContext context) {
@@ -8,14 +9,14 @@ Widget profileWidgets(BuildContext context) {
     margin: const EdgeInsets.symmetric(horizontal: 15),
     decoration: BoxDecoration(
       shape: BoxShape.rectangle,
-      color: Colors.white,
+      color: Colors.pink[200],
       borderRadius: const BorderRadius.all(
         Radius.circular(20),
       ),
-      border: Border.all(
-        color: Colors.black,
-        width: 1,
-      ),
+      // border: Border.all(
+      //   color: Colors.black,
+      //   width: 1,
+      // ),
     ),
     child: Container(
       child: Row(
@@ -43,8 +44,10 @@ Widget profileWidgets(BuildContext context) {
           Container(
             margin: EdgeInsets.only(right: 20),
             child: CircleAvatar(
-              radius: 35,
+              radius: 25,
               child: Icon(Icons.account_circle_sharp),
+              backgroundColor: Colors.pink[400],
+              foregroundColor: Colors.white,
             ),
           ),
         ],
@@ -53,7 +56,6 @@ Widget profileWidgets(BuildContext context) {
   );
 }
 
-
 Widget profileContainer(BuildContext context, String title) {
   return Container(
       width: MediaQuery.of(context).size.width,
@@ -61,14 +63,14 @@ Widget profileContainer(BuildContext context, String title) {
       margin: const EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        color: Colors.white,
+        color: Colors.pink[200],
         borderRadius: const BorderRadius.all(
           Radius.circular(20),
         ),
-        border: Border.all(
-          color: Colors.black,
-          width: 1,
-        ),
+        // border: Border.all(
+        //   color: Colors.black,
+        //   width: 1,
+        // ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,22 +89,82 @@ Widget profileContainer(BuildContext context, String title) {
             height: 5,
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              buildListView(Icons.person, "Edit Profile", () {}),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(7, 10, 0, 10),
+                child: Container(
+                  decoration: BoxDecoration(color: Colors.transparent),
+                  child: TextButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.person, color: Colors.black,),
+                      label: Text(
+                        'Edit profile',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.pink[200]),),
+                ),
+              ),
               Divider(
                 color: Colors.black26,
               ),
-              buildListView(
-                  Icons.medical_services, "Medical History", () {}),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(7, 10, 0, 10),
+                child: Container(
+                  decoration: BoxDecoration(color: Colors.transparent),
+                  child: TextButton.icon(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PatientScreen()));
+                      },
+                      icon: Icon(Icons.medical_services, color: Colors.black,),
+                      label: Text(
+                        'Medical History',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.pink[200]),),
+                ),
+              ),
               Divider(
                 color: Colors.black26,
               ),
-              buildListView(
-                  Icons.article_outlined, "Medical Reports", () {}),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(7, 10, 0, 10),
+                child: Container(
+                  decoration: BoxDecoration(color: Colors.transparent),
+                  child: TextButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.article_outlined, color: Colors.black,),
+                      label: Text(
+                        'Medical Reports',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.pink[200]),),
+                ),
+              ),
               Divider(
                 color: Colors.black26,
               ),
-              buildListView(Icons.article_outlined, "View Activity", () {}),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(7, 10, 0, 10),
+                child: Container(
+                  decoration: BoxDecoration(color: Colors.transparent),
+                  child: TextButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.timer_outlined, color: Colors.black,),
+                      label: Text(
+                        'View History',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.pink[200]),),
+                ),
+              ),
             ],
           )
         ],
@@ -116,30 +178,51 @@ Widget profileSettings(BuildContext context) {
       margin: const EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        color: Colors.white,
+        color: Colors.pink[200],
         borderRadius: const BorderRadius.all(
           Radius.circular(20),
         ),
-        border: Border.all(
-          color: Colors.black,
-          width: 1,
-        ),
+        // border: Border.all(
+        //   color: Colors.black,
+        //   width: 1,
+        // ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildListView(Icons.settings, "Settings", () {}),
-           Divider(
-                color: Colors.black26,
+          Padding(
+                padding: const EdgeInsets.fromLTRB(7, 10, 0, 10),
+                child: Container(
+                  decoration: BoxDecoration(color: Colors.transparent),
+                  child: TextButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.settings, color: Colors.black,),
+                      label: Text(
+                        'Settings',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.pink[200]),),
+                ),
               ),
-          buildListView(Icons.logout_outlined, "Logout", () {}),
+          Divider(
+            color: Colors.black26,
+          ),
+          Padding(
+                padding: const EdgeInsets.fromLTRB(7, 10, 0, 10),
+                child: Container(
+                  decoration: BoxDecoration(color: Colors.transparent),
+                  child: TextButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.logout_outlined, color: Colors.black,),
+                      label: Text(
+                        'Log out',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.pink[200]),),
+                ),
+              ),
         ],
       ));
-}
-
-Widget buildListView(IconData icon, String title, Function tapHandler) {
-  return ListTile(
-    leading: Icon(icon),
-    title: Text(title),
-    onTap: tapHandler(),
-  );
 }

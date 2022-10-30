@@ -16,7 +16,9 @@ class PatientScreen extends StatelessWidget {
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.black,
+       title: Text('Medical History', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         ),
+        backgroundColor: Colors.black,
         body: Center(
           child: PatientList(),
         ),

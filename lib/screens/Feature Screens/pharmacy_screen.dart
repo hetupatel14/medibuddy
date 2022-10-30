@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medibuddy/models/bloodbanks.dart';
+// import 'package:medibuddy/models/bloodbanks.dart';
 import 'package:medibuddy/models/pharamcies.dart';
 import 'package:medibuddy/services/pharmacy_service.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +17,9 @@ class PharmacyScreen extends StatelessWidget {
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.black,
+        title: Text('Medical Shops', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         ),
+        backgroundColor: Colors.black,
         body: Center(
           child: PharmacyList(),
         ),

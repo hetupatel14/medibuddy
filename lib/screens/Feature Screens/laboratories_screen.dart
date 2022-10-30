@@ -17,7 +17,9 @@ class LaboratoryScreen extends StatelessWidget {
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: Colors.black,
+       title: Text('Laboratories', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
         ),
+        backgroundColor: Colors.black,
         body: Center(
           child: LaboratoryList(),
         ),

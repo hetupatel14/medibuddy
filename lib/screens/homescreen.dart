@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medibuddy/screens/profile_screen.dart';
 import 'package:medibuddy/services/auth.dart';
 import 'package:medibuddy/widgets/feature_grid.dart';
 
@@ -58,33 +59,79 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             child: Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Hi Bhavya,",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Hi Bhavya,",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      Text(
+                        "Good Morning",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ],
                   ),
-                  Text(
-                    "Good Morning",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400),
-                  ),
+                  IconButton(
+                    onPressed: () async {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Dialog(
+                              child: Container(
+                                decoration: BoxDecoration(color: Colors.black,),
+                                height: 75,
+                                width: 20,
+                                child: ListView(
+                                  children: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      ProfileScreen()));
+                                        },
+                                        child: Text("Profile", style: TextStyle(color: Colors.pink, fontWeight: FontWeight.bold),)),
+                                        Divider(color: Colors.grey,),
+                                    TextButton(
+                                        onPressed: () async {
+                                          await _auth.signOut();
+                                        },
+                                        child: Text("Sign Out", style: TextStyle(color: Colors.pink, fontWeight: FontWeight.bold),))
+                                  ],
+                                ),
+                              ),
+                            );
+                          });
+                    },
+                    icon: CircleAvatar(
+                      child: Icon(Icons.person),
+                      radius: 30,
+                      backgroundColor: Colors.pink[400],
+                      foregroundColor: Colors.white,
+                    ),
+                    iconSize: 50,
+                  )
                 ],
               ),
             ),
           ),
-          ElevatedButton(
-            onPressed: () async {
-              await _auth.signOut();
-            },
-            child: Text("Sign out"),
-          ),
+          // ElevatedButton(
+          //   onPressed: () async {
+          //     await _auth.signOut();
+          //   },
+          //   child: Text("Sign out"),
+          // ),
           Container(
             width: MediaQuery.of(context).size.width,
             height: 200,
