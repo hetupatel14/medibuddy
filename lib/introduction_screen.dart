@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:medibuddy/widgets/bottom_navigation_bar.dart';
+import 'package:medibuddy/wrapper.dart';
 
 class IntroScreen extends StatefulWidget {
   static const routeName = '/onboard';
@@ -15,7 +16,7 @@ class _IntroScreenState extends State<IntroScreen> {
 
   void _onIntroEnd(context) {
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) => BottomNavigationScreen()),
+      MaterialPageRoute(builder: (_) => Wrapper()),
     );
   }
 

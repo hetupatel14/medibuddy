@@ -73,14 +73,14 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Theme.of(context).bottomSheetTheme.backgroundColor,
-      //   elevation: 0,
-      //   title: _pages[_selectedPageIndex]['title'],
-      // ),
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).bottomSheetTheme.backgroundColor,
+        elevation: 0,
+        title: _pages[_selectedPageIndex]['title'],
+      ),
       extendBody: false,
       backgroundColor: Theme.of(context).bottomSheetTheme.backgroundColor,
-      body: Container(margin: EdgeInsets.only(top: 35),child: _pages[_selectedPageIndex]['page']),
+      body: Container(margin: EdgeInsets.only(top: 0),child: _pages[_selectedPageIndex]['page']),
       bottomNavigationBar: Container(
         margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
           child: BottomNavigationBar(

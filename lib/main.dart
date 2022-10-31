@@ -7,7 +7,7 @@ import 'package:medibuddy/introduction_screen.dart';
 // import 'package:medibuddy/screens/Feature%20Screens/pharmacy_screen.dart';
 import 'package:medibuddy/services/auth.dart';
 import 'package:medibuddy/widgets/bottom_navigation_bar.dart';
-// import 'package:medibuddy/wrapper.dart';
+import 'package:medibuddy/wrapper.dart';
 import 'package:provider/provider.dart';
 import './screens/homescreen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (ctx) => IntroScreen(),
+          Wrapper.routeName: (ctx) => Wrapper(),
           BottomNavigationScreen.routeName: (ctx) => BottomNavigationScreen(),
           HomeScreen.routeName: (ctx) => HomeScreen(),
         },

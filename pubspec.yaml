@@ -42,6 +42,11 @@ dependencies:
   provider: ^6.0.3
   firebase_storage: ^10.3.11
   image_picker: ^0.8.6
+  banner_listtile: ^2.2.0
+  datetime_picker_formfield_new: ^2.0.0
+  flutter_localizations:
+    sdk: flutter
+  table_calendar: ^3.0.8
   
 
 dev_dependencies:
@@ -75,6 +80,11 @@ flutter:
     - assets/images/password.png
     - assets/images/verification.jpg
     - assets/images/doctor.png
+    - assets/images/burpees.jpg
+    - assets/images/crunches.jpg
+    - assets/images/leg_rise.jpg
+    - assets/images/plank.jpg
+    - assets/images/pushup.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
