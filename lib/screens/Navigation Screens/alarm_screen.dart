@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:datetime_picker_formfield_new/datetime_picker_formfield_new.dart';
@@ -13,13 +11,12 @@ class AlarmScreenState extends State<AlarmScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
         body: SingleChildScrollView(
           child: Center(
               child: Container(
                   constraints: BoxConstraints(maxWidth: 600),
                   child: DateTimeForm())),
-        ));
+        ),);
   }
 }
 
@@ -129,7 +126,7 @@ _selectDate(context) async {
           textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(
                 // backgroundColor: Colors.pink[400], // button text color
-                textStyle: TextStyle(color: Colors.white)),
+                textStyle: TextStyle(color: Colors.black)),
           ),
         ),
         child: child!,

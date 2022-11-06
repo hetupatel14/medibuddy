@@ -39,11 +39,6 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       },
       {
         'page': HomeScreen(),
-        'title': Text(
-          "Home",
-          style: TextStyle(
-              color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-        ),
       },
       {
         'page': DietScreen(),

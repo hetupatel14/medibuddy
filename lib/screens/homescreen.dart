@@ -132,22 +132,22 @@ class _HomeScreenState extends State<HomeScreen> {
           //   },
           //   child: Text("Sign out"),
           // ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 200,
-            margin: EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              color: Colors.white,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(20),
-              ),
-              border: Border.all(
-                color: Colors.black,
-                width: 1,
-              ),
-            ),
-          ),
+          // Container(
+          //   width: MediaQuery.of(context).size.width,
+          //   height: 200,
+          //   margin: EdgeInsets.all(5),
+          //   decoration: BoxDecoration(
+          //     shape: BoxShape.rectangle,
+          //     color: Colors.white,
+          //     borderRadius: const BorderRadius.all(
+          //       Radius.circular(20),
+          //     ),
+          //     border: Border.all(
+          //       color: Colors.black,
+          //       width: 1,
+          //     ),
+          //   ),
+          // ),
           FeatureGridDesign(),
         ],
       ),

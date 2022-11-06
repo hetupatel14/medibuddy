@@ -47,6 +47,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   table_calendar: ^3.0.8
+  youtube_player_flutter: ^8.1.1
   
 
 dev_dependencies:
@@ -80,11 +81,7 @@ flutter:
     - assets/images/password.png
     - assets/images/verification.jpg
     - assets/images/doctor.png
-    - assets/images/burpees.jpg
-    - assets/images/crunches.jpg
-    - assets/images/leg_rise.jpg
-    - assets/images/plank.jpg
-    - assets/images/pushup.png
+    - assets/ypf.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
