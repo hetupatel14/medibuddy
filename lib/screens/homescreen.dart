@@ -16,32 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
-    // return Scaffold(
-    //   backgroundColor: Theme.of(context).bottomSheetTheme.backgroundColor,
-    //   appBar: AppBar(
-    //     backgroundColor: Theme.of(context).bottomSheetTheme.backgroundColor,
-    //     elevation: 0,
-    //     iconTheme: const IconThemeData(color: Colors.black),
-    //     title: Text(
-    //       "Home",
-    //       style: TextStyle(
-    //           color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-    //     ),
-    // actions: [
-    //   IconButton(
-    //     onPressed: () {
-    //       Navigator.push(
-    //           context,
-    //           MaterialPageRoute(
-    //               builder: (context) => const ProfileScreen()));
-    //     },
-    //     icon: const CircleAvatar(
-    //       child: Icon(Icons.person),
-    //     ),
-    //   ),
-    // ],
-    // ),
-    // body:
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             return Dialog(
                               child: Container(
                                 decoration: BoxDecoration(color: Colors.black,),
-                                height: 75,
+                                height: 110,
                                 width: 20,
                                 child: ListView(
                                   children: [

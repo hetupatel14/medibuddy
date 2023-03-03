@@ -1,85 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:medibuddy/screens/Feature%20Screens/blood_banks_screen.dart';
 import 'package:medibuddy/screens/Feature%20Screens/care_takers_screen.dart';
 import 'package:medibuddy/screens/Feature%20Screens/doctor_screen.dart';
-import 'package:medibuddy/screens/Feature%20Screens/hospital_screen.dart';
 import 'package:medibuddy/screens/Feature%20Screens/laboratories_screen.dart';
 import 'package:medibuddy/screens/Feature%20Screens/pharmacy_screen.dart';
 import '../models/feature.dart';
 
-// class FeatureGrid extends StatelessWidget {
-//   final String id;
-//   final String imageUrl;
-//   final String title;
-//   const FeatureGrid({Key? key, required this.id, required this.imageUrl, required this.title})
-//       : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return ClipRRect(
-//       borderRadius: BorderRadius.circular(20),
-//       child: GridTile(
-//         child: Container(
-//           child: Column(
-//             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//             children: [
-//               Container(
-//                 child: Image.asset(
-//                   imageUrl,
-//                   height: 80,
-//                   width: 80,
-//                   // alignment: Alignment.centerLeft,
-//                 ),
-//               ),
-//               Container(
-//                   margin: EdgeInsets.only(left: 5),
-//                   child: Column(
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     children: [
-//                       Text(
-//                         "$title",
-//                         style: TextStyle(
-//                             fontSize: 16,
-//                             color: Colors.white,
-//                             fontWeight: FontWeight.bold),
-//                       ),
-//                       TextButton(
-//                           onPressed: () {
-//                             Navigator.push(
-//                                 context,
-//                                 MaterialPageRoute(
-//                                     builder: (context) => ProfileScreen()));
-//                           },
-//                           child: Container(
-//                             padding: EdgeInsets.fromLTRB(6, 4, 6, 4),
-//                             decoration: BoxDecoration(
-//                                 border:
-//                                     Border.all(color: Colors.white, width: 2), borderRadius: BorderRadius.circular(20)),
-//                             child: Text(
-//                               "Explore",
-//                               style: TextStyle(
-//                                   color: Colors.white,
-//                                   fontWeight: FontWeight.w400),
-//                             ),
-//                           ))
-//                     ],
-//                   ))
-//             ],
-//           ),
-//           color: Colors.pink[200],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class FeatureGridDesign extends StatelessWidget {
-  // final String id;
-  // final String imageUrl;
-  // final String title;
-  // FeatureGridDesign(
-  //     {Key? key, required this.id, required this.imageUrl, required this.title})
-  //     : super(key: key);
 
   final List<Feature> loadedFeatures = [
     Feature(
@@ -89,26 +15,16 @@ class FeatureGridDesign extends StatelessWidget {
     ),
     Feature(
       id: '2',
-      title: "Hospitals",
-      imageUrl: "assets/images/doctor.png",
-    ),
-    Feature(
-      id: '3',
       title: "Laboratories",
       imageUrl: "assets/images/doctor.png",
     ),
     Feature(
-      id: '4',
+      id: '3',
       title: "Medical Shops",
       imageUrl: "assets/images/doctor.png",
     ),
     Feature(
-      id: '5',
-      title: "Blood Banks",
-      imageUrl: "assets/images/doctor.png",
-    ),
-    Feature(
-      id: '6',
+      id: '4',
       title: "Care Takers",
       imageUrl: "assets/images/doctor.png",
     ),
@@ -169,30 +85,16 @@ class FeatureGridDesign extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              HospitalScreen()));
+                                              LaboratoryScreen()));
                                   break;
                                 case '3':
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              LaboratoryScreen()));
-                                  break;
-                                case '4':
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
                                               PharmacyScreen()));
                                   break;
-                                case '5':
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              BloodBankScreen()));
-                                  break;
-                                case '6':
+                                case '4':
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(

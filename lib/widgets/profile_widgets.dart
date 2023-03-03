@@ -59,7 +59,7 @@ Widget profileWidgets(BuildContext context) {
 Widget profileContainer(BuildContext context, String title) {
   return Container(
       width: MediaQuery.of(context).size.width,
-      height: 325,
+      height: 380,
       margin: const EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
@@ -174,7 +174,7 @@ Widget profileContainer(BuildContext context, String title) {
 Widget profileSettings(BuildContext context) {
   return Container(
       width: MediaQuery.of(context).size.width,
-      height: 135,
+      height: 165,
       margin: const EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
