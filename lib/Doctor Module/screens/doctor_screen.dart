@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medibuddy/Doctor%20Module/models/doctors.dart';
-import 'package:medibuddy/Doctor%20Module/widgets/list/doctor_list.dart';
+import '../models/doctors.dart';
+import '../widgets/list/doctor_list.dart';
 import 'package:provider/provider.dart';
 import '../services/doctor_service.dart';
 

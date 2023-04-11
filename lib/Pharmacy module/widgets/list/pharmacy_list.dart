@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medibuddy/Pharmacy%20module/models/pharamcies.dart';
+import '../../models/pharmacies.dart';
 import 'package:provider/provider.dart';
 import '../tile/pharmacy_tile.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:medibuddy/screens/Navigation%20Screens/calendar_screen.dart';
+import '../Calendar Module/calendar_screen.dart';
 import 'package:medibuddy/Navigation%20Bar%20Module/Diet%20Module/diet_screen.dart';
 import 'package:medibuddy/Navigation%20Bar%20Module/Exercise%20Module/screens/exercise_screen.dart';
 import 'package:medibuddy/Navigation%20Bar%20Module/Home%20Module/screen/homescreen.dart';
@@ -39,14 +39,14 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
               color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
         ),
       },
-      // {
-      //   'page': CalendarScreen(),
-      //   'title': Text(
-      //     "Calendar",
-      //     style: TextStyle(
-      //         color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-      //   ),
-      // }
+      {
+        'page': CalendarScreen(),
+        'title': Text(
+          "Calendar",
+          style: TextStyle(
+              color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
+        ),
+      }
     ];
     super.initState();
   }
@@ -79,8 +79,8 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
               BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
               BottomNavigationBarItem(
                   icon: Icon(Icons.restaurant_sharp), label: ""),
-              // BottomNavigationBarItem(
-              //     icon: Icon(Icons.calendar_month_outlined), label: ""),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.calendar_month_outlined), label: ""),
             ],
             backgroundColor: Colors.black,
             selectedItemColor: Colors.white,

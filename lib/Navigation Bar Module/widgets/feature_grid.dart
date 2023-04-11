@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:medibuddy/Bloodbank%20Module/bloodbank_screen.dart';
 import 'package:medibuddy/Caretaker%20Module/screens/care_takers_screen.dart';
 import 'package:medibuddy/Doctor%20Module/screens/doctor_screen.dart';
+import 'package:medibuddy/Hospital%20Module/hospital_screen.dart';
 import 'package:medibuddy/Laboratory%20Module/screens/laboratories_screen.dart';
 import 'package:medibuddy/Pharmacy%20module/screens/pharmacy_screen.dart';
 import '../models/feature.dart';
@@ -26,6 +28,16 @@ class FeatureGridDesign extends StatelessWidget {
     Feature(
       id: '4',
       title: "Care Takers",
+      imageUrl: "assets/images/doctor.png",
+    ),
+    Feature(
+      id: '5',
+      title: "Blood Banks",
+      imageUrl: "assets/images/doctor.png",
+    ),
+    Feature(
+      id: '6',
+      title: "Hospitals",
       imageUrl: "assets/images/doctor.png",
     ),
   ];
@@ -100,6 +112,20 @@ class FeatureGridDesign extends StatelessWidget {
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               CareTakerScreen()));
+                                  break;
+                                  case '5':
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              BloodBankScreen()));
+                                  break;
+                                  case '6':
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              HospitalScreen()));
                                   break;
                               }
                             },

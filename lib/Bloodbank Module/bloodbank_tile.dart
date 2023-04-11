@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
-import '../../models/pharmacies.dart';
+ import 'package:flutter/material.dart';
+import 'bloodbanks.dart';
+// import 'package:medibuddy/models/laboratories.dart';
 
-class PharmacyTile extends StatelessWidget {
-  final Pharmacies pharmacies;
-  const PharmacyTile({required this.pharmacies});
+class BloodBankTile extends StatelessWidget {
+  final BloodBanks bloodbank;
+  const BloodBankTile({required this.bloodbank});
 
-  @override
   Widget build(BuildContext context) {
     return Padding(
         padding: EdgeInsets.only(top: 8.0),
@@ -18,32 +18,37 @@ class PharmacyTile extends StatelessWidget {
               backgroundImage: AssetImage('assets/images/google.png'),
               backgroundColor: Colors.transparent,
             ),
-            title: Text(pharmacies.name, style: TextStyle(fontWeight: FontWeight.bold),),
+            title: Text(bloodbank.name, style: TextStyle(fontWeight: FontWeight.bold),),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Text("Location: ", style: TextStyle(fontWeight: FontWeight.w800),),
-                    Text('${pharmacies.location}')
+                    Text("Blood Groups Available: ", style: TextStyle(fontWeight: FontWeight.w800),),
+                    Text('${bloodbank.bloodGroupsAvailable}')
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text('Location: ', style: TextStyle(fontWeight: FontWeight.w800),),
+                    Text('${bloodbank.location}'),
                   ],
                 ),
                 Row(
                   children: [
                     Text('Phone: ', style: TextStyle(fontWeight: FontWeight.w800),),
-                    Text('${pharmacies.phoneNumber}'),
+                    Text('${bloodbank.phoneNumber}'),
                   ],
                 ),
                 Row(
                   children: [
                     Text('Rating: ', style: TextStyle(fontWeight: FontWeight.w800),),
-                    Text('${pharmacies.rating}')
+                    Text('${bloodbank.rating}')
                   ],
                 )
               ],
-            )
-          )
+            ),
           ),
-        );
+        ));
   }
 }

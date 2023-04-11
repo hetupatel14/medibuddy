@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:medibuddy/models/bloodbanks.dart';
-import 'package:medibuddy/Pharmacy%20module/models/pharamcies.dart';
-import 'package:medibuddy/Pharmacy%20module/services/pharmacy_service.dart';
+import '../models/pharmacies.dart';
+import '../services/pharmacy_service.dart';
 import 'package:provider/provider.dart';
 import '../widgets/list/pharmacy_list.dart';
 

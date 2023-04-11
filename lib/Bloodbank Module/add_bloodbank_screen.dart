@@ -1,23 +1,23 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class addPharmacy extends StatefulWidget {
-  const addPharmacy({super.key});
+class addBloodbanks extends StatefulWidget {
+  const addBloodbanks({super.key});
 
   @override
-  State<addPharmacy> createState() => _addPharmacyState();
+  State<addBloodbanks> createState() => _addBloodbanksState();
 }
 
-class _addPharmacyState extends State<addPharmacy> {
-  final CollectionReference pharmacyCollection =
-      FirebaseFirestore.instance.collection('pharmacies');
+class _addBloodbanksState extends State<addBloodbanks> {
+  final CollectionReference bloodBanksCollection =
+      FirebaseFirestore.instance.collection('bloodbanks');
   final _formKey = new GlobalKey<FormState>();
 
   String name = "";
   String location = "";
   int rating = 0;
   String phoneNumber = "";
-  String bloodGroupsAvailable = "";
+  List bloodGroupsAvailable = [];
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _addPharmacyState extends State<addPharmacy> {
       appBar: AppBar(
           backgroundColor: Colors.brown[400],
           elevation: 0.0,
-          title: Text("Add a Pharmacy")),
+          title: Text("Add a BloodBank")),
       body: Container(
           child: Form(
               key: _formKey,
@@ -66,7 +66,17 @@ class _addPharmacyState extends State<addPharmacy> {
                       setState(() => phoneNumber = val);
                     },
                   ),
-                 
+                  SizedBox(height: 20.0),
+                  TextFormField(
+                    decoration: InputDecoration(
+                        hintText:
+                            "Blood Groups Available(Write each bloodgroup seperated by comma)"),
+                    validator: (val) =>
+                        val!.isEmpty ? "Enter atleast one bloodgroup" : null,
+                    onChanged: (val) {
+                      setState(() => bloodGroupsAvailable = val.split(","));
+                    },
+                  ),
                   SizedBox(height: 20.0),
                   ElevatedButton(
                       child: Text("Submit"),
@@ -75,11 +85,13 @@ class _addPharmacyState extends State<addPharmacy> {
                         print("location: ${location}");
                         print("Rating: ${rating}");
                         print("Phone number: ${phoneNumber}");
+                        print("bloodGroupsAvailable: ${bloodGroupsAvailable}");
 
-                        return await pharmacyCollection.doc().set({
+                        return await bloodBanksCollection.doc().set({
                           'name': name,
                           'location': location,
                           'rating': rating,
+                          'bloodGroupsAvailable': bloodGroupsAvailable,
                           'phoneNumber': phoneNumber,
                         });
                       })

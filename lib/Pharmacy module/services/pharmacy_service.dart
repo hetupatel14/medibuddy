@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:medibuddy/Pharmacy%20module/models/pharamcies.dart';
+import '../models/pharmacies.dart';
 
 
 class PharmacyService {
