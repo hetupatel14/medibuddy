@@ -24,8 +24,15 @@ class BloodBankTile extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text("Blood Groups Available: ", style: TextStyle(fontWeight: FontWeight.w800),),
-                    Text('${bloodbank.bloodGroupsAvailable}')
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Blood Groups Available: ", style: TextStyle(fontWeight: FontWeight.w800),),
+                        Text('${bloodbank.bloodGroupsAvailable}')
+
+                      ],
+                    ),
+                    
                   ],
                 ),
                 Row(

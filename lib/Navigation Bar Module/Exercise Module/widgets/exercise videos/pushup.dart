@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:medibuddy/Navigation%20Bar%20Module/Exercise%20Module/widgets/exercise%20videos/videolist.dart';
+import 'videolist.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class PushupVideo extends StatelessWidget {
@@ -36,15 +36,12 @@ class _pushUpState extends State<pushUp> {
   bool _isPlayerReady = false;
 
   final List<String> _ids = [
-    'nPt8bK2gbaU',
-    'gQDByCdjUXw',
-    'iLnmTe5Q2Qw',
-    '_WoCV4c6XOE',
-    'KmzdUe0RSJo',
-    '6jZDSSZZxjQ',
-    'p2lYr3vM_1w',
-    '7QUtEmBT_-w',
-    '34_PXCzGw1M',
+
+    'IODxDxX7oi4',
+       'qLBImHhCXSw',
+    'Xyd_fa5zoEU',
+    'JB2oyawG9KI',
+    'ASdvN_XEl_c',
   ];
 
   @override
